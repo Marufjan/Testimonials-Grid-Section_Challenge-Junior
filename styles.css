@@ -1,0 +1,180 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Barlow Semi Codensed", sans-serif;
+  font-size: 13px;
+  line-height: 1.4;
+  background-color: hsl(210, 46%, 95%);
+}
+
+/* Resusable Styles */
+.container {
+  max-width: 1100px;
+  margin: 5% auto;
+  overflow: hidden;
+}
+
+/* Boxes Styles */
+.boxes {
+  display: grid;
+  grid-template-areas:
+    " a a b c"
+    "e f f c";
+  grid-gap: 1rem;
+  width: 100%;
+}
+
+.box {
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: stretch;
+}
+
+.violet-box {
+  grid-area: a;
+  background-color: hsl(263, 55%, 52%);
+  position: relative;
+}
+
+svg {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 2rem;
+}
+
+.violet-box {
+  z-index: 2;
+}
+
+.grey-box {
+  grid-area: b;
+  background-color: hsl(217, 19%, 35%);
+}
+
+.white-box {
+  grid-area: e;
+  background-color: hsl(0, 0%, 100%);
+}
+
+.black-box {
+  grid-area: f;
+  background-color: hsl(219, 29%, 14%);
+}
+
+.sidebar {
+  grid-area: c;
+  background-color: hsl(0, 0%, 100%);
+}
+
+/* Texts */
+h2 {
+  line-height: 1.2;
+  font-size: 0.8rem;
+  margin: 0.8rem 0;
+}
+
+h4 {
+  font-size: 0.7rem;
+}
+
+.white-box,
+.sidebar {
+  color: hsl(217, 19%, 35%);
+}
+
+.violet-box,
+.black-box,
+.grey-box {
+  color: hsl(0, 0%, 81%);
+}
+
+p {
+  font-size: 12px;
+  opacity: 70%;
+}
+
+/* Image and Names */
+.img-name {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  gap: 1rem;
+}
+
+.img-name img {
+  width: 40px;
+  border-radius: 50%;
+}
+
+.name-job .graduate {
+  opacity: 50%;
+}
+
+.bigger {
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.sidebar p {
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+/* Media Queries */
+@media (max-width: 500px) {
+  .boxes {
+    display: flex;
+    flex-direction: column;
+    margin: 3.5rem 0;
+  }
+
+  .box {
+    margin: 0.3rem 2rem;
+  }
+}
+
+@media (min-width: 511px) and (max-width: 800px) {
+  .boxes {
+    display: grid;
+    grid-template-areas:
+      " a a b "
+      "e f f "
+      "c c c";
+    grid-gap: 1rem;
+    width: 100%;
+  }
+
+  .violet-box {
+    grid-area: a;
+  }
+
+  .grey-box {
+    grid-area: b;
+    background-color: hsl(0, 0%, 100%);
+    color: hsl(217, 19%, 35%);
+  }
+
+  .white-box {
+    grid-area: e;
+    background-color: hsl(0, 0%, 100%);
+  }
+
+  .black-box {
+    grid-area: f;
+    background-color: hsl(219, 29%, 14%);
+  }
+
+  .sidebar {
+    grid-area: c;
+    background-color: hsl(217, 19%, 35%);
+    color: hsl(0, 0%, 81%);
+  }
+}
